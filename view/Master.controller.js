@@ -1,4 +1,4 @@
-sap.ui.core.mvc.Controller.extend("timesheet_ns.view.Master", {
+sap.ui.core.mvc.Controller.extend("timeSheetApp_ns.view.Master", {
 
 	onInit : function() {
 		this.oInitialLoadFinishedDeferred = jQuery.Deferred();
@@ -73,7 +73,7 @@ sap.ui.core.mvc.Controller.extend("timesheet_ns.view.Master", {
 	loadDetailView : function(){
 		this.getRouter().myNavToWithoutHash({ 
 			currentView : this.getView(),
-			targetViewName : "timesheet_ns.view.Detail",
+			targetViewName : "timeSheetApp_ns.view.Detail",
 			targetViewType : "XML"
 		});
 	},
@@ -98,7 +98,7 @@ sap.ui.core.mvc.Controller.extend("timesheet_ns.view.Master", {
 		else {
     		this.getRouter().myNavToWithoutHash({ 
     			currentView : this.getView(),
-    			targetViewName : "timesheet_ns.view.NotFound",
+    			targetViewName : "timeSheetApp_ns.view.NotFound",
     			targetViewType : "XML"
         	});
 		}
@@ -110,7 +110,7 @@ sap.ui.core.mvc.Controller.extend("timesheet_ns.view.Master", {
 		var filters = [];
 		var searchString = this.getView().byId("searchField").getValue();
 		if (searchString && searchString.length > 0) {
-			filters = [ new sap.ui.model.Filter("ProjectID", sap.ui.model.FilterOperator.Contains, searchString) ];
+			filters = [ new sap.ui.model.Filter("Customer", sap.ui.model.FilterOperator.Contains, searchString) ];
 		}
 		// Update list binding
 		this.getView().byId("list").getBinding("items").filter(filters);

@@ -1,5 +1,5 @@
 <mvc:View 
-    controllerName="timesheet_ns.view.NotFound"
+    controllerName="timeSheetApp_ns.view.NotFound"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc" >
     <Page 

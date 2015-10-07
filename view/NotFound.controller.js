@@ -1,1 +1,1 @@
-sap.ui.core.mvc.Controller.extend("timesheet_ns.view.NotFound", {});
+sap.ui.core.mvc.Controller.extend("timeSheetApp_ns.view.NotFound", {});

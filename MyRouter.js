@@ -1,8 +1,8 @@
 jQuery.sap.require("sap.m.routing.RouteMatchedHandler");
 jQuery.sap.require("sap.ui.core.routing.Router");
-jQuery.sap.declare("timesheet_ns.MyRouter");
+jQuery.sap.declare("timeSheetApp_ns.MyRouter");
 
-sap.ui.core.routing.Router.extend("timesheet_ns.MyRouter", {
+sap.ui.core.routing.Router.extend("timeSheetApp_ns.MyRouter", {
 
 	constructor : function() {
 		sap.ui.core.routing.Router.apply(this, arguments);

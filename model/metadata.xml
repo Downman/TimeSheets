@@ -13,15 +13,36 @@
                 <Property Name="ProjectID" Nullable="false" Type="Edm.String"/>
                 <Property Name="Customer" Type="Edm.String"/>
                 <Property Name="Descirption" Type="Edm.String"/>
-                <Property Name="Date" Type="Edm.DateTime"/>
-                <Property Name="Activity" Type="Edm.String"/>
-                <Property Name="Hours" Type="Edm.Decimal"/>
-                <Property Name="DrivingHours" Type="Edm.Decimal"/>
-                <Property Name="Distance" Type="Edm.Decimal"/>
-                <Property Name="OtherCost" Type="Edm.Decimal"/>
+                <Property Name="StartDate" Type="Edm.DateTime"/>
+                <Property Name="EndDate" Type="Edm.DateTime"/>
+                <Property Name="Active" Type="Edm.Boolean"/>
+                <NavigationProperty Name="TimeEntries" Relationship="ProjectModel.TimeEntry_Project_Project_TimeEntries" ToRole="TimeEntry_Project" FromRole="Project_TimeEntries"/>
             </EntityType>
-            <EntityContainer Name="default" m:IsDefaultEntityContainer="true">
-                <EntitySet EntityType="ProjectModel.Project" Name="ProjectSet"/>
+            <EntityType Name="TimeEntry">
+                <Key>
+                    <PropertyRef Name="TimeEntryID"/>
+                </Key>
+                <Property Name="TimeEntryID" Nullable="false" Type="Edm.String"/>
+                <Property Name="Day" Type="Edm.DateTime"/>
+                <Property Name="Activity" Type="Edm.String"/>
+                <Property Name="Hours" Type="Edm.Time"/>
+                <Property Name="TravelTime" Type="Edm.Time"/>
+                <Property Name="AdditionalCost" Type="Edm.Decimal"/>
+                <Property Name="Currency" Type="Edm.String"/>
+                <Property Name="User" Type="Edm.String"/>
+                <NavigationProperty Name="Project" Relationship="ProjectModel.TimeEntry_Project_Project_TimeEntries" ToRole="Project_TimeEntries" FromRole="TimeEntry_Project"/>
+            </EntityType>
+            <Association Name="TimeEntry_Project_Project_TimeEntries">
+                <End Type="ProjectModel.Project" Role="Project_TimeEntries" Multiplicity="0..1"/>
+                <End Type="ProjectModel.TimeEntry" Role="TimeEntry_Project" Multiplicity="*"/>
+            </Association>
+            <EntityContainer Name="TimeSheetService" m:IsDefaultEntityContainer="true">
+                <EntitySet EntityType="ProjectModel.Project" Name="Projects"/>
+                <EntitySet EntityType="ProjectModel.TimeEntry" Name="TimeEntries"/>
+                <AssociationSet Name="TimeEntries_Project_Projects" Association="ProjectModel.TimeEntry_Project_Project_TimeEntries">
+                    <End Role="TimeEntry_Project" EntitySet="TimeEntries"/>
+                    <End Role="Project_TimeEntries" EntitySet="Projects"/>
+                </AssociationSet>
             </EntityContainer>
         </Schema>
     </edmx:DataServices>

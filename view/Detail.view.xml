@@ -1,13 +1,13 @@
-<mvc:View xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" controllerName="timesheet_ns.view.Detail">
+<mvc:View xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" controllerName="timeSheetApp_ns.view.Detail">
     <Page id="detailPage" navButtonPress="onNavBack" title="{i18n&gt;detailTitle}" showNavButton="{device&gt;/isPhone}">
         <content>
-            <ObjectHeader id="detailHeader" title="{ProjectID}" number="" numberUnit="" introActive="false" titleActive="false" iconActive="false">
+            <ObjectHeader id="detailHeader" title="{TimeEntryID}" number="{ProjectID}" numberUnit="" introActive="false" titleActive="false" iconActive="false">
                 <attributes id="detailAttributes">                
                     <ObjectAttribute id="attribute" text="{i18n&gt;detailText}" active="false">
                     </ObjectAttribute>
                 </attributes>
                 <firstStatus id="detailStatus">
-                    <ObjectStatus id="status" text="">
+                    <ObjectStatus id="status" text="{Customer}">
                     </ObjectStatus>
                 </firstStatus>
             </ObjectHeader>
@@ -17,17 +17,24 @@
                         <content>
 							<f:SimpleForm id="iconTabFilter1form" minWidth="1024" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1">
 								<f:content>
-									<List noDataText="Drop list items here" id="__list3">
-									    <customData>
-									        <core:CustomData key="sap-ui-fastnavgroup" value="true" writeToDom="true" id="__data5"/>
-									    </customData>
-									    <items/></List>
+									<Label id="label1" text="ProjectID">
+									</Label>
+									<Text id="text1" text="{ProjectID}" maxLines="0">
+									</Text>
+									<Label id="label2" text="Active">
+									</Label>
+									<Text id="text2" text="{Active}" maxLines="0">
+									</Text>
+									<Label id="label3" text="">
+									</Label>
+									<Text id="text3" text="" maxLines="0">
+									</Text>
 									<core:ExtensionPoint name="extIconTabFilterForm1"/>
 								</f:content>
 							</f:SimpleForm>
                         </content>
                     </IconTabFilter>
-                    <IconTabFilter id="iconTabFilter2" key="" icon="sap-icon://inspection">
+                    <IconTabFilter id="iconTabFilter2" key="" icon="sap-icon://enter-more">
                         <content>
 							<f:SimpleForm id="iconTabFilter2form" minWidth="1024" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1">
 								<f:content>
@@ -44,16 +51,6 @@
 									<Text id="text6" text="" maxLines="0">
 									</Text>
 									<core:ExtensionPoint name="extIconTabFilterForm2"/>
-								</f:content>
-							</f:SimpleForm>
-                        </content>
-                    </IconTabFilter>
-                    <IconTabFilter id="iconTabFilter3" key="" icon="sap-icon://add">
-                        <content>
-							<f:SimpleForm id="iconTabFilter3form" minWidth="1024" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1">
-								<f:content>
-								
-									<core:ExtensionPoint name="extIconTabFilterForm3"/>
 								</f:content>
 							</f:SimpleForm>
                         </content>

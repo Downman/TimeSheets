@@ -1,10 +1,10 @@
 {
   "dataBinding": {
     "/view/Master.view.xml": {
-      "entitySet": "ProjectSet"
+      "entitySet": "Projects"
     },
     "/view/Detail.view.xml": {
-      "entitySet": "ProjectSet"
+      "entitySet": "TimeEntries"
     },
     "/view/NotFound.view.xml": {
       "entitySet": "UNBINDKEY"
@@ -17,21 +17,21 @@
     {
       "templateId": "ui5template.fioriMasterDetail",
       "templateVersion": "1.4.0",
-      "dateTimeStamp": "Fri, 02 Oct 2015 13:53:01 GMT"
+      "dateTimeStamp": "Wed, 07 Oct 2015 12:27:02 GMT"
     }
   ],
-  "translation": {
-    "translationDomain": "",
-    "supportedLanguages": "en,fr,de",
-    "defaultLanguage": "en",
-    "defaultI18NPropertyFile": "i18n.properties",
-    "resourceModelName": "i18n"
-  },
   "mockpreview": {
     "mockUri": "",
     "metadataFilePath": "model/metadata.xml",
     "loadJSONFiles": false,
     "loadCustomRequests": false,
     "mockRequestsFilePath": ""
+  },
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "en,fr,de",
+    "defaultLanguage": "en",
+    "defaultI18NPropertyFile": "i18n.properties",
+    "resourceModelName": "i18n"
   }
 }

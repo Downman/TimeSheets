@@ -1,9 +1,9 @@
-jQuery.sap.declare("timesheet_ns.Component");
-jQuery.sap.require("timesheet_ns.MyRouter");
+jQuery.sap.declare("timeSheetApp_ns.Component");
+jQuery.sap.require("timeSheetApp_ns.MyRouter");
 
-sap.ui.core.UIComponent.extend("timesheet_ns.Component", {
+sap.ui.core.UIComponent.extend("timeSheetApp_ns.Component", {
 	metadata : {
-		name : "TimeSheet",
+		name : "TimeSheetApp",
 		version : "1.0",
 		includes : [],
 		dependencies : {
@@ -11,7 +11,7 @@ sap.ui.core.UIComponent.extend("timesheet_ns.Component", {
 			components : []
 		},
 
-		rootView : "timesheet_ns.view.App",
+		rootView : "timeSheetApp_ns.view.App",
 
 		config : {
 			resourceBundle : "i18n/messageBundle.properties",
@@ -23,9 +23,9 @@ sap.ui.core.UIComponent.extend("timesheet_ns.Component", {
 
 		routing : {
 			config : {
-				routerClass : timesheet_ns.MyRouter,
+				routerClass : timeSheetApp_ns.MyRouter,
 				viewType : "XML",
-				viewPath : "timesheet_ns.view",
+				viewPath : "timeSheetApp_ns.view",
 				targetAggregation : "detailPages",
 				clearTarget : false
 			},
@@ -69,7 +69,7 @@ sap.ui.core.UIComponent.extend("timesheet_ns.Component", {
 
 		// Always use absolute paths relative to our own component
 		// (relative paths will fail if running in the Fiori Launchpad)
-		var oRootPath = jQuery.sap.getModulePath("timesheet_ns");
+		var oRootPath = jQuery.sap.getModulePath("timeSheetApp_ns");
 
 		// Set i18n model
 		var i18nModel = new sap.ui.model.resource.ResourceModel({

@@ -1,4 +1,4 @@
-sap.ui.core.mvc.Controller.extend("timesheet_ns.view.Detail", {
+sap.ui.core.mvc.Controller.extend("timeSheetApp_ns.view.Detail", {
 
 	onInit : function() {
 		this.oInitialLoadFinishedDeferred = jQuery.Deferred();
@@ -86,7 +86,7 @@ sap.ui.core.mvc.Controller.extend("timesheet_ns.view.Detail", {
 	showEmptyView : function () {
 		this.getRouter().myNavToWithoutHash({ 
 			currentView : this.getView(),
-			targetViewName : "timesheet_ns.view.NotFound",
+			targetViewName : "timeSheetApp_ns.view.NotFound",
 			targetViewType : "XML"
 		});
 	},
